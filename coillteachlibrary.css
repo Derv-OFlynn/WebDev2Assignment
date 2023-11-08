@@ -6,19 +6,20 @@ Student name: Dervla O'Flynn C22344363
 body
 {
     margin: 0; 
+    background-color: #604D53;
     background-image: url('https://i.pinimg.com/736x/76/a9/f2/76a9f24714f4c695782d6789d643b277.jpg');
     padding: 0;
 }
 
 /*header styling*/
-.header
+header
 {
-    width: 100%;
-    vertical-align: top;
-    left: 0%;
-    height: 95%;
-
+    display: grid;
+    place-items: center;
+    margin-left: 20%;
+    margin-right: 20%;
 }
+
 
 /*Custom menu to override bootstrap styling*/
 .menuDerv
@@ -175,7 +176,7 @@ h2{
 {
   font-family: 'Segoe UI', sans-serif;
   text-align: center;
-  color: #F8F6DD;
+  color: #EEE9AA;
 }
 
 /*Second border for the craic*/
@@ -190,13 +191,17 @@ h2{
 
 .SectionImg
 {
-  width: 8%;
+  width: 20%;
+  display: grid;
+  place-items: center;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
 footer
 {
     width:100%;
-    color: #F8F6DD;
+    color: #EEE9AA;
     background-color: #604D53;
     text-align: center;
     vertical-align: bottom;
@@ -207,7 +212,7 @@ footer
 .FooterText
 {
     text-align: center;
-    color: #F8F6DD;
+    color: #EEE9AA;
 }
 
 .TroopBadgeImg
@@ -235,7 +240,7 @@ ol
 {
   display: grid;
   place-items: center;
-  color: #F8F6DD
+  color: #EEE9AA;
 }
 
 
@@ -253,7 +258,7 @@ div a
 
 th, td
 {
-  color:#F8F6DD;
+  color:#EEE9AA;
   padding-top: 5%;
 }
 
@@ -280,7 +285,7 @@ input[type=text], select, textarea {
 
 input[type=submit] {
   background-color: #604D53;
-  color: #F8F6DD;
+  color: #EEE9AA;
   padding: 12px 20px;
   border: none;
   border-radius: 4px;
@@ -293,7 +298,7 @@ input[type=submit]:hover {
 
 label
 {
-  color: #F8F6DD;
+  color: #EEE9AA;
 }
 /*End of contact form stylings*/
 
@@ -301,44 +306,44 @@ label
 .section
 {
   background-color: rgba(12, 142, 12, 0.25);
-  color: #F8F6DD;
+  color: #EEE9AA;
 }
 
 .troop
 {
   background-color: rgba(255, 255, 116, 0.25);
-  color: #F8F6DD;
+  color: #EEE9AA;
 }
 
 .county
 {
   background-color: rgba(0, 140, 255, 0.25);
-  color: #F8F6DD;
+  color: #EEE9AA;
 }
 
 .province
 {
   background-color: rgba(25, 0, 255, 0.25);
-  color: #F8F6DD;
+  color: #EEE9AA;
 }
 
 .national
 {
   background-color: rgba(43, 255, 0, 0.25);
-  color: #F8F6DD;
+  color: #EEE9AA;
 }
 
 .international
 {
   background-color: rgba(153, 0, 255, 0.5);
-  color: #F8F6DD;
+  color: #EEE9AA;
 }
 /*End of colour coding for events*/
 
 .BadgeButton
 {
-  color: #F8F6DD;
-  background-color: #F8F6DD;
+  color: #EEE9AA;
+  background-color: #EEE9AA;
   border-color: #604D53;
   border-radius: 5px;
   border-style: solid;
@@ -405,9 +410,9 @@ position: static;
 
 .caption-container {
   text-align: center;
-  background-color: #F8F6DD;
+  background-color: #EEE9AA;
   padding: 2px 16px;
-  color: #F8F6DD;
+  color: #EEE9AA;
 }
 
 /*Styling for the anniversary book pages*/
