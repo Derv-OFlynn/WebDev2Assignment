@@ -24,10 +24,10 @@ body
 .menuDerv
 {
     text-align: center;
-    border: 3px solid rgb(255, 255, 116);
-    background-color: white;
+    border: 3px solid #59527A;
+    background-color: #313638;
     border-radius: 5px;
-    color:rgb(12, 142, 12);
+    color:darkgoldenrod;
     display: grid;
     place-items: center;
     margin-left: 20%;
@@ -38,30 +38,30 @@ body
 a
 {
     font-family: 'Segoe UI', sans-serif;
-    color: rgb(12, 142, 12);
+    color: darkgoldenrod;
 }
 
 /*Anchor inside a list styling*/
 li a
 {
-  color:rgb(12, 142, 12);
+  color:darkgoldenrod;
 }
 
 /*Anchor with link*/
 a:link
 {
-    color: rgb(12, 142, 12);
+  color:darkgoldenrod;
 }
 
 /*visited anchor*/
 a:visited
 {
-  color:rgb(12, 142, 12);
+  color:darkgoldenrod;
 }
 
 a:active
 {
-  color: seagreen;
+  color: #604D53;
 }
 
 a:hover
@@ -71,12 +71,12 @@ a:hover
 
 .menuDerv a
 {
-  color: rgb(12, 142, 12);
+  color: darkgoldenrod;
 }
 
 .menuDerv a:link
 {
-  color: rgb(12, 142, 12);
+  color: darkgoldenrod;
 }
 
 .menuDerv a:hover
@@ -86,43 +86,43 @@ a:hover
 
 .menuDerv a:visited
 {
-  color:rgb(12, 142, 12)
+  color:darkgoldenrod;
 }
 
 .menuDerv a:active
 {
-  color:seagreen;
+  color:darkgoldenrod;
 }
 
 .nav-item a:active
 {
-  color: rgb(12, 142, 12);
-  border: 3px solid darkgoldenrod ;
+  color: darkgoldenrod;
+  border: 3px solid #604D53 ;
 }
 
 .navbar-nav a:visited
 {
-  color:rgb(12, 142, 12);
+  color:darkgoldenrod;
 }
 
 .navbar-nav a:active
 {
-  color:rgb(12, 142, 12);
+  color:darkgoldenrod;
 }
 
 .navbar-nav a:link
 {
-  color:rgb(12, 142, 12);
+  color:darkgoldenrod;
 }
 
 .navbar-nav a:hover
 {
-  color:darkgoldenrod;
+  color:#E3DA78;
 }
 
 #navbarDropdownMenuLink
 {
-  color: rgb(12, 142, 12);
+  color: darkgoldenrod;
 
 }
 
@@ -130,6 +130,10 @@ a:hover
 {
   color: darkgoldenrod;
 }
+
+.navbar-light .navbar-nav .nav-link {
+    color: darkgoldenrod;
+  }
 
 .footer
 {
@@ -146,9 +150,9 @@ h2{
   padding: 2%;
   margin-left: 5%;
   margin-right: 5%;
-  background-color: WhiteSmoke;
+  background-color: #313638;
   border-style: solid;
-  border-color: ForestGreen;
+  border-color: #604D53;
   border-radius: 5px;
   display: grid;
 }
@@ -158,9 +162,9 @@ h2{
 {
   font-family: "Trebuchet MS", sans-serif;
   text-align: center;
-  border: 3px solid rgb(255, 255, 116);
+  border: 3px solid #59527A;
   border-radius: 5px;
-  background-color: honeydew;
+  background-color: #F8F6DD;
   margin-left: 25%;
   margin-right: 25%;
   color: rgb(71, 75, 71);
@@ -171,7 +175,7 @@ h2{
 {
   font-family: 'Segoe UI', sans-serif;
   text-align: center;
-  color: rgb(71, 75, 71);
+  color: #F8F6DD;
 }
 
 /*Second border for the craic*/
@@ -179,7 +183,7 @@ h2{
 {
   padding: 1%;
   border-style: solid;
-  border-color: ForestGreen;
+  border-color: #604D53;
   border-radius: 5px;
   display: grid;
 }
@@ -192,7 +196,7 @@ h2{
 footer
 {
     width:100%;
-    background-color: honeydew;
+    background-color: #F8F6DD;
     text-align: center;
     vertical-align: bottom;
     bottom: 0;
@@ -209,7 +213,7 @@ footer
 {
   width: 60%;
   border-style: solid;
-  border-color: ForestGreen;
+  border-color: #604D53;
   border-radius: 5px;
 }
 
@@ -217,7 +221,7 @@ footer
 {
   width: 40%;
   border-style: solid;
-  border-color: ForestGreen;
+  border-color: #604D53;
   border-radius: 5px;
 }
 
@@ -230,7 +234,7 @@ ol
 {
   display: grid;
   place-items: center;
-  color: rgb(71, 75, 71)
+  color: #F8F6DD
 }
 
 
@@ -248,7 +252,7 @@ div a
 
 th, td
 {
-  color:rgb(71, 75, 71);
+  color:#F8F6DD;
   padding-top: 5%;
 }
 
@@ -274,8 +278,8 @@ input[type=text], select, textarea {
 
 
 input[type=submit] {
-  background-color: rgb(255, 255, 116);
-  color: rgb(71, 75, 71);
+  background-color: #59527A;
+  color: #F8F6DD;
   padding: 12px 20px;
   border: none;
   border-radius: 4px;
@@ -288,7 +292,7 @@ input[type=submit]:hover {
 
 label
 {
-  color: rgb(71, 75, 71);
+  color: #F8F6DD;
 }
 /*End of contact form stylings*/
 
@@ -296,45 +300,45 @@ label
 .section
 {
   background-color: rgba(12, 142, 12, 0.25);
-  color: rgb(71, 75, 71);
+  color: #F8F6DD;
 }
 
 .troop
 {
   background-color: rgba(255, 255, 116, 0.25);
-  color: rgb(71, 75, 71);
+  color: #F8F6DD;
 }
 
 .county
 {
   background-color: rgba(0, 140, 255, 0.25);
-  color: rgb(71, 75, 71);
+  color: #F8F6DD;
 }
 
 .province
 {
   background-color: rgba(25, 0, 255, 0.25);
-  color: rgb(71, 75, 71);
+  color: #F8F6DD;
 }
 
 .national
 {
   background-color: rgba(43, 255, 0, 0.25);
-  color: rgb(71, 75, 71);
+  color: #F8F6DD;
 }
 
 .international
 {
   background-color: rgba(153, 0, 255, 0.5);
-  color: rgb(71, 75, 71);
+  color: #F8F6DD;
 }
 /*End of colour coding for events*/
 
 .BadgeButton
 {
-  color: rgb(71, 75, 71);
-  background-color: honeydew;
-  border-color: rgb(12, 142, 12);
+  color: #F8F6DD;
+  background-color: #F8F6DD;
+  border-color: #604D53;
   border-radius: 5px;
   border-style: solid;
 }
@@ -343,7 +347,7 @@ label
 {
   height: 40%;
   width: 80%;
-  border: 2px solid rgb(12, 142, 12);
+  border: 2px solid #604D53;
   border-radius: 5px;
 }
 
@@ -369,8 +373,8 @@ position: static;
   position: relative;
   width: 12%;
   padding: 0vw;
-  color: rgb(12, 142, 12);
-  background-color: rgb(255, 255, 116);
+  color: #604D53;
+  background-color: #59527A;
   font-size: 200%;
   border-radius: 0 3px 3px 0;
 }
@@ -388,8 +392,8 @@ position: static;
 /*Inverts color of buttons when hovered over to give feedback*/
 .prevIMG:hover,
 .nextIMG:hover {
-  color:rgb(255, 255, 116);
-  background-color: rgb(12, 142, 12);
+  color:#59527A;
+  background-color: #604D53;
 }
 
 .numbertext {
@@ -400,9 +404,9 @@ position: static;
 
 .caption-container {
   text-align: center;
-  background-color: rgb(71, 75, 71);
+  background-color: #F8F6DD;
   padding: 2px 16px;
-  color: honeydew;
+  color: #F8F6DD;
 }
 
 /*Styling for the anniversary book pages*/
