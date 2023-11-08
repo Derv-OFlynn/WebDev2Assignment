@@ -24,7 +24,7 @@ body
 .menuDerv
 {
     text-align: center;
-    border: 3px solid #59527A;
+    border: 3px solid #604D53;
     background-color: #313638;
     border-radius: 5px;
     color:darkgoldenrod;
@@ -162,12 +162,12 @@ h2{
 {
   font-family: "Trebuchet MS", sans-serif;
   text-align: center;
-  border: 3px solid #59527A;
+  border: 3px solid #604D53;
   border-radius: 5px;
-  background-color: #F8F6DD;
+  background-color: #604D53;
   margin-left: 25%;
   margin-right: 25%;
-  color: rgb(71, 75, 71);
+  color: darkgoldenrod;
 }
 
 /*Styling for main paragraph*/
@@ -196,7 +196,8 @@ h2{
 footer
 {
     width:100%;
-    background-color: #F8F6DD;
+    color: #F8F6DD;
+    background-color: #604D53;
     text-align: center;
     vertical-align: bottom;
     bottom: 0;
@@ -206,7 +207,7 @@ footer
 .FooterText
 {
     text-align: center;
-    color: rgb(71, 75, 71) ;
+    color: #F8F6DD;
 }
 
 .TroopBadgeImg
@@ -278,7 +279,7 @@ input[type=text], select, textarea {
 
 
 input[type=submit] {
-  background-color: #59527A;
+  background-color: #604D53;
   color: #F8F6DD;
   padding: 12px 20px;
   border: none;
@@ -374,7 +375,7 @@ position: static;
   width: 12%;
   padding: 0vw;
   color: #604D53;
-  background-color: #59527A;
+  background-color: #604D53;
   font-size: 200%;
   border-radius: 0 3px 3px 0;
 }
@@ -392,7 +393,7 @@ position: static;
 /*Inverts color of buttons when hovered over to give feedback*/
 .prevIMG:hover,
 .nextIMG:hover {
-  color:#59527A;
+  color:#604D53;
   background-color: #604D53;
 }
 
