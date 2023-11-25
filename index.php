@@ -27,16 +27,6 @@
 
   <body>
 
-    <br> <br>
-
-    <header>
-      <!--Header Image-->
-      <img class="SectionImg" src="SiteImages/Coillteach_Library_yellow.png" alt="Coillteach Library Logo">
-    </header>
-
-    <!--Content Section-->
-    <br> <br> 
-
     <!--Navbar. Contains a dropdown menu that auto-scrolls to selected content. Made using bootstrap and own work -->
     <div class="menuDerv"> 
       <nav class="navbar navbar-expand-lg navbar-dark">
@@ -69,6 +59,11 @@
       </nav>  
     </div>
     <!--End Navbar-->
+
+    <header>
+      <!--Header Image-->
+      <img class="SectionImg" src="SiteImages/Coillteach_Library_yellow.png" alt="Coillteach Library Logo">
+    </header>
 
     <br> <br>
 
@@ -296,7 +291,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <!--Local Script-->
-    <script src="Scripts/Kilmacud.js"></script>
+    <script src="Scripts/coillteachlib.js"></script>
     <!--End of scripts-->
   </body>
 </html>

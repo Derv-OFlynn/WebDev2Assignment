@@ -27,13 +27,20 @@ header
     text-align: center;
     border: 3px solid #604D53;
     background-color: #313638;
-    border-radius: 5px;
     color:darkgoldenrod;
     display: grid;
     place-items: center;
-    margin-left: 20%;
-    margin-right: 20%;
-} 
+    overflow: hidden;
+    width: 100%;
+    top: 0;
+}
+
+.sticky
+{
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
 
 /*anchor styling*/
 a
@@ -135,24 +142,10 @@ a:hover
   color: #E3DA78;
 }
 
-#navbarDropdownMenuLink
-{
-  color: darkgoldenrod;
-
-}
-
-#navbarDropdownMenuLink:hover
-{
-  color: darkgoldenrod;
-}
-
 .navbar-light .navbar-nav .nav-link {
     color: darkgoldenrod;
   }
 
-.nav-link:hover {
-  color: #E3DA78;
-}
 
 .footer
 {
