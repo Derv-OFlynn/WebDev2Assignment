@@ -11,7 +11,6 @@
     Title: Index
     Description: This is the homepage for my Library website
 -->
-<!DOCTYPE html>
 <html lang="en">
 
   <head>
