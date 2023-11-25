@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<?php
+    session_start();
+?>
 
 <!--
     Programmer: Derv O'Flynn
@@ -9,7 +11,7 @@
     Title: Index
     Description: This is the homepage for my Library website
 -->
-
+<!DOCTYPE html>
 <html lang="en">
 
   <head>
@@ -17,7 +19,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!--Local CSS-->
     <link rel="stylesheet" href="coillteachlibrary.css">
-    <title> Home: Coillteach Library </title> 
+    <title> Home: Coillteach Library</title> 
     <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Website icon in tab-->
@@ -44,36 +46,24 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="index.html"></a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Home <span class="sr-only">(current)</span></a>
-              <div class="dropdown-menu bg-dark"> <!--Dropdown menu for content. The href="#" included matches the id in the corresponding sections and allows for auto-scroll-->
-                <a class="dropdown-item bg-dark" href="#OurTroop">Our troop</a>
-                <a class="dropdown-item bg-dark" href="#Beavers">Beavers</a>
-                <a class="dropdown-item bg-dark" href="#Cubs">Cubs</a>
-                <a class="dropdown-item bg-dark" href="#Scouts">Scouts</a>
-                <a class="dropdown-item bg-dark" href="#Ventures">Ventures</a>
-                <a class="dropdown-item bg-dark" href="#Rovers">Rovers</a>
-                <a class="dropdown-item bg-dark" href="#Leaders">Leaders</a>
-              </div>
+            <li class="nav-item">
+              <a class="nav-link" href="index.php">Home</a>
             </li>
             <!--Links to the other pages -->
             <li class="nav-item">
-              <a class="nav-link" href="ParentResources.html">Parent Resources</a>
+              <a class="nav-link" href="login.php">Login</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="ScoutAndScouter.html">Scout and Scouter Resources</a>
+              <a class="nav-link" href="register.php">Register</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Events.html">Events</a>
+              <a class="nav-link" href="logout.php">Logout</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="History.html">History</a>
+              <a class="nav-link" href="searchbooks.html">Search Books</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="ContactUs.html">Contact Us</a>
+              <a class="nav-link" href="contactus.php">Contact Us</a>
             </li>
           </ul>
         </div>

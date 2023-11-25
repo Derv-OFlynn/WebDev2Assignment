@@ -151,6 +151,10 @@ a:hover
     color: darkgoldenrod;
   }
 
+.nav-link:hover {
+  color: #E3DA78;
+}
+
 .footer
 {
     border: rgb(255, 255, 255);
