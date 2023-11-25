@@ -1,7 +1,10 @@
 <?php
-    session_start();
+  session_start();
+  unset($_SESSION["account"]);
+  
+  
+  require_once("database.php");
 ?>
-
 <!--
     Programmer: Derv O'Flynn
     Student Number: C22344363 
@@ -36,23 +39,16 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="index.php">Home</a>
+              <a class="nav-link" href="index.php"><h3>Home</h3></a>
             </li>
             <!--Links to the other pages -->
             <li class="nav-item">
-              <a class="nav-link" href="login.php">Login</a>
+              <a class="nav-link" href="searchbooks.html"><h3>Search Books</h3></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="register.php">Register</a>
+              <a class="nav-link" href="contactus.php"><h3>Contact Us</h3></a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="logout.php">Logout</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="searchbooks.html">Search Books</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contactus.php">Contact Us</a>
+              <a class="nav-link" href="account.php"><h3>My Account</h3></a>
             </li>
           </ul>
         </div>
@@ -70,7 +66,7 @@
     <!--Welcome Content. Contains location information and a picture of the troop neckerchief-->
     <div class="MainContainer">
       <div class="secondBorder">
-        <h2 class ="ContentHeading" id="OurTroop"> Welcome to Coillteach Library! </h2>
+        <h2 class ="ContentHeading"> Welcome to Coillteach Library! </h2>
         <p class = "ContainerParagraph">
           Our troop started in 1963 and is located in the Old Presbytery on the Lower Kilmacud Road (beside Bear Market ;) .
           Our neckerchief is green and gold (green is worn on the left).
@@ -291,7 +287,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <!--Local Script-->
-    <script src="Scripts/coillteachlib.js"></script>
+    <script src="Scripts\coillteachlib.js"></script>
     <!--End of scripts-->
   </body>
 </html>
