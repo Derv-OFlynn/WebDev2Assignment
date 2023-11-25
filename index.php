@@ -43,7 +43,7 @@
             </li>
             <!--Links to the other pages -->
             <li class="nav-item">
-              <a class="nav-link" href="searchbooks.html"><h3>Search Books</h3></a>
+              <a class="nav-link" href="searchbooks.php"><h3>Search Books</h3></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="contactus.php"><h3>Contact Us</h3></a>
@@ -65,26 +65,24 @@
 
     <!--Welcome Content. Contains location information and a picture of the troop neckerchief-->
     <div class="MainContainer">
-      <div class="secondBorder">
-        <h2 class ="ContentHeading"> Welcome to Coillteach Library! </h2>
-        <p class = "ContainerParagraph">
-          Our troop started in 1963 and is located in the Old Presbytery on the Lower Kilmacud Road (beside Bear Market ;) .
-          Our neckerchief is green and gold (green is worn on the left).
-          We have two Beaver Sections, two Cub sections, two Scouts sections, a Venture section and a Rover Section.
-
-          <br> <br>
-          <img class="TroopBadgeImg" src="SiteImages/neckerchief.png" alt="Kilmacud Neckerchief picture">
-
-          <br>
-        </p> 
-      </div>
+      	<div class="secondBorder">
+        	<h2 class ="ContentHeading"> Welcome to Coillteach Library! </h2>
+        	<p class = "ContainerParagraph">
+        		This library was founded in 2010 and sits near the TU Dublin Grangegorman City Campus. This website was created to allow 
+				users to interact with the library online. You can create an account, login, logout, reserve books and check the progress
+		  		of books you have already reserved!
+				<br> <br>
+				We hope you enjoy the use of this library to its fullest extent!
+        	</p> 
+			<br>
+      	</div>
     </div>
 
     <br>
     <!--Beaver Section Container-->
     <div class="MainContainer">
       <div class="secondBorder">
-        <h2 class ="ContentHeading" id="Beavers"> Beavers </h2>
+        <h2 class ="ContentHeading"> PLACEHOLDER </h2>
         <p class = "ContainerParagraph">
           <br>
 
@@ -104,167 +102,6 @@
       </div>
     </div>
 
-    <br>
-    <!--Cub Section Container-->
-    <div class="MainContainer">
-      <div class="secondBorder">
-        <h2 class ="ContentHeading" id="Cubs"> Cubs </h2>
-        <p class = "ContainerParagraph">
-
-          <br>
-
-          <img class="SectionImg" src="SiteImages/CubSection.png" alt="Cub Section Image">
-
-          <br> <br>
-          Cub Scouts are aged 9 to 11 years old and wear navy jumpers.
-
-          <br> <br>
-
-          62nd Cubs meet on Tuesday nights from 7:00 to 8:30
-
-          <br> <br>
-
-          71st Cubs meet on Thursday nights from 7:00 to 8:30
-        </p> 
-      </div>
-    </div>
-
-    <br>
-    <!--Scout Section Container-->
-    <div class="MainContainer">
-      <div class="secondBorder">
-        <h2 class ="ContentHeading" id="Scouts"> Scouts </h2>
-        <p class = "ContainerParagraph">
-          <br>
-
-          <img class="SectionImg" src="SiteImages/ScoutSection.png" alt="Scout Section Image">
-
-          <br> <br>
-
-          Scouts are aged 12 to 14 and they are very active! They wear the Scout Shirt and participate in a lot of county and national events too.
-
-          <br> <br>
-
-          62nd Scouts meet on Friday nights from 8:00 to 10:00
-
-          <br> <br>
-
-          71st Scouts meet on Wednesday nights from 7:45 to 9:30 
-
-          <br> <br>
-          Check out the 62nd Scout's trip to Austria last summer! 
-          <br> <br>
-          <iframe class="MapEmbed" src="https://www.youtube.com/embed/xiuR98lkr9A" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allow="fullscreen"></iframe>
-
-          <br> <br>
-        </p> 
-        <!--Break needed as iframe tag interrupts <p>-->
-        <p class="ContainerParagraph">
-
-          <br> <br>
-          The Scouts alternate annual camps between Ireland, Gillwell and further abroad!
-        </p>
-      </div>
-    </div>
-
-    <br>
-    <!--Venture Section Container-->
-    <div class="MainContainer">
-      <div class="secondBorder">
-        <h2 class ="ContentHeading" id="Ventures"> Ventures </h2>
-        <p class = "ContainerParagraph">
-          <br>
-
-          <img class="SectionImg" src="SiteImages/VentureSection.png" alt="Venture Section Image">
-
-          <br> <br>
-          Ventures are aged 15 to 17. They can start helping out in other sections at this age as well. Ventures doing Gaisce can also complete the Chief Scout Award for Ventures concurrently. They wear the Scout Shirt too! 
-
-          <br> <br>
-
-          Ventures meet on Thursday nights from 8:45 to 10:30 
-        </p> 
-      </div>
-    </div>
-
-    <br>
-    <!--Rover Section Container-->
-    <div class="MainContainer">
-      <div class="secondBorder">
-        <h2 class ="ContentHeading" id="Rovers"> Rovers </h2>
-        <p class = "ContainerParagraph">
-          <br>
-
-          <img class="SectionImg" src="SiteImages/RoverSection.png" alt="Rover Section Image">
-
-          <br> <br>
-          
-          Rovers are aged 18 to 26 and do not have a designated meeting night. Most of our Rovers are leaders as well! (not a requirement though if ye want to tag along for the craic ;) )
-        
-        </p> 
-      </div>
-    </div>
-
-    <br>
-    <!--Leader Section Container. Uses a table to display titles and names-->
-    <div class="MainContainer">
-      <div class="secondBorder">
-        <h2 class ="ContentHeading" id="Leaders"> Leaders </h2>
-        <p class ="ContainerParagraph">
-          <br>
-
-          <img class="SectionImg" src="SiteImages/ScoutingIrelandLogo.png" alt="Scouting Ireland Logo">
-
-          <br> <br>
-
-          Our leaders are an enthusiastic and passionate bunch :). We're always open to new leaders too.
-        </p>
-          <!--Table for title and Names-->
-          <table class="bord">
-            <tr>
-              <th>Group Leader: </th>
-              <td>Keith Lamon</td>
-            </tr>
-          
-            <tr>
-              <th>62nd Beaver Section Leader: &nbsp; &nbsp; </th>
-              <td> Meadhbh Ní Cleirigh</td>
-            </tr>
-
-            <tr>
-              <th>71st Beaver Section Leader: </th>
-              <td> Enda Colfer</td>
-            </tr>
-
-            <tr>
-              <th>62nd Cub Section Leader: </th>
-              <td>Cormac Doyle</td>
-            </tr>
-
-            <tr>
-              <th>71st Cub Section Leader: </th>
-              <td>Matthew Pearse</td>
-            </tr>
-
-            <tr>
-              <th>62nd Scout Section Leader: </th>
-              <td>Derek Kinsella</td>
-            </tr>
-
-            <tr>
-              <th>71st Scout Section Leader: </th>
-              <td>Matthew Pearse</td>
-            </tr>
-
-            <tr>
-              <th>Venture Section Leader: </th>
-              <td>Keith Lamon</td>
-            </tr>
-
-          </table>
-      </div>
-    </div>
-
     <br> <br>
 
     <!--End content section-->
@@ -274,7 +111,7 @@
     
       <br>
 
-      <p id="FooterText">Website created by Derv O'Flynn, 2022</p>
+      <p id="FooterText">Website created by Derv O'Flynn, 2023</p>
 
       <br>
 
