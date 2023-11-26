@@ -92,9 +92,6 @@
       <div class="secondBorder">
         <h2 class ="ContentHeading"> PLACEHOLDER </h2>
         <p class = "ContainerParagraph">
-          <br>
-
-          <img class="SectionImg" src="SiteImages/BeaverSection.png" alt="Beaver Section Image">
 
           <br> <br>
           Beaver Scouts are aged 6 to 8 years old and wear light blue jumpers. We have two beaver sections!
@@ -106,6 +103,7 @@
           <br> <br>
 
           71st Beavers meet on Mondays from 6:30 to 7:30
+		  
         </p> 
       </div>
     </div>

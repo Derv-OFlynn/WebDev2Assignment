@@ -287,6 +287,22 @@ input[type=submit]:hover {
   background-color: darkgoldenrod;
 }
 
+input[type=button]
+{
+	color: #EEE9AA;
+	background-color: #604D53;
+	border-color: #604D53;
+	border-radius: 5px;
+	border-style: solid;
+}
+
+input[type=button]:hover
+{
+	color:#604D53;
+	background-color: #EEE9AA;
+	border-color: #EEE9AA;
+}
+
 label
 {
   color: #EEE9AA;
@@ -309,6 +325,29 @@ label
   border-color: #604D53;
   border-radius: 5px;
   border-style: solid;
+}
+
+.BadgeButton:hover
+{
+  background-color: #EEE9AA;
+  border-color: #EEE9AA;
+}
+
+.BadgeButton a
+{
+  color: #EEE9AA;
+  background-color: #604D53;
+  border-color: #604D53;
+
+}
+
+.BadgeButton a:hover
+{
+	color: #604D53;
+	background-color: #EEE9AA;
+	border-color: #EEE9AA;
+	border-radius: 5px;
+	text-decoration: none;
 }
 
 .MapEmbed

@@ -73,11 +73,11 @@
 
                     <br> <br>
 
-                    <button class="BadgeButton"><a href="searchbooks.php">RESERVE A BOOK</a></button>
+                    <button class="BadgeButton"><a href="searchbooks.php">Reserve a Book</a></button>
 
                     <br> <br>
 
-                    LOGOUT
+                    <button class="BadgeButton"><a href="logout.php">Log Out</a></button>
 
                 </p> 
             </h4>
