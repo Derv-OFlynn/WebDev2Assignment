@@ -1,9 +1,15 @@
 <?php
-  session_start();
-  unset($_SESSION["account"]);
-  
-  
-  require_once("database.php");
+	session_start();
+
+	if(isset($_SESSION["success"]) && isset($_COOKIE["name"]))
+	{
+		if($_SESSION["success"] != "Logged In" || ($_COOKIE["name"] == "cookiename"))
+		{
+			header("Location: login.php");
+		}
+	}
+	
+	require_once("database.php");
 ?>
 <!--
     Programmer: Derv O'Flynn
@@ -32,29 +38,31 @@
 
     <!--Navbar. Contains a dropdown menu that auto-scrolls to selected content. Made using bootstrap and own work -->
     <div class="menuDerv"> 
-      <nav class="navbar navbar-expand-lg navbar-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="index.php"><h3>Home</h3></a>
-            </li>
-            <!--Links to the other pages -->
-            <li class="nav-item">
-              <a class="nav-link" href="searchbooks.php"><h3>Search Books</h3></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contactus.php"><h3>Contact Us</h3></a>
-            </li>
-              <a class="nav-link" href="account.php"><h3>My Account</h3></a>
-            </li>
-          </ul>
-        </div>
-      </nav>  
+		<nav class="navbar navbar-expand-lg navbar-dark">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNavDropdown">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="index.php"><h3>Home</h3></a>
+					</li>
+					<!--Links to the other pages -->
+					<li class="nav-item">
+						<a class="nav-link" href="searchbooks.php"><h3>Search/Reserve Books</h3></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="contactus.php"><h3>Contact Us</h3></a>
+					</li>
+						<a class="nav-link" href="account.php"><h3>My Account</h3></a>
+					</li>
+				</ul>
+			</div>
+		</nav>  
     </div>
     <!--End Navbar-->
+
+	<br> <br>
 
     <header>
       <!--Header Image-->

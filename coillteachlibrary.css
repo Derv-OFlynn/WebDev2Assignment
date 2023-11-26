@@ -16,6 +16,7 @@ header
 {
     display: grid;
     place-items: center;
+	margin-top: 5%;
     margin-left: 20%;
     margin-right: 20%;
 }
@@ -24,6 +25,7 @@ header
 /*Custom menu to override bootstrap styling*/
 .menuDerv
 {
+	position: fixed;
     text-align: center;
     border: 3px solid #604D53;
     background-color: #313638;
@@ -204,7 +206,6 @@ h2{
 
 footer
 {
-	position: absolute;
     width:100%;
     color: #EEE9AA;
     background-color: #604D53;
@@ -219,22 +220,6 @@ footer
 {
     text-align: center;
     color: #EEE9AA;
-}
-
-.TroopBadgeImg
-{
-  width: 60%;
-  border-style: solid;
-  border-color: #604D53;
-  border-radius: 5px;
-}
-
-.BadgeImg
-{
-  width: 40%;
-  border-style: solid;
-  border-color: #604D53;
-  border-radius: 5px;
 }
 
 div ul
@@ -315,41 +300,12 @@ label
   color: #EEE9AA;
 }
 
-.troop
-{
-  background-color: rgba(255, 255, 116, 0.25);
-  color: #EEE9AA;
-}
-
-.county
-{
-  background-color: rgba(0, 140, 255, 0.25);
-  color: #EEE9AA;
-}
-
-.province
-{
-  background-color: rgba(25, 0, 255, 0.25);
-  color: #EEE9AA;
-}
-
-.national
-{
-  background-color: rgba(43, 255, 0, 0.25);
-  color: #EEE9AA;
-}
-
-.international
-{
-  background-color: rgba(153, 0, 255, 0.5);
-  color: #EEE9AA;
-}
 /*End of colour coding for events*/
 
 .BadgeButton
 {
   color: #EEE9AA;
-  background-color: #EEE9AA;
+  background-color: #604D53;
   border-color: #604D53;
   border-radius: 5px;
   border-style: solid;
@@ -366,46 +322,6 @@ label
 /*Slideshow styling and brute force because jaysus*/
 .container {
 position: static;
-}
-
-
-.mySlides {
-  display: grid;
-  place-items: center;
-  width: 10%;
-}
-
-.cursor {
-  cursor: pointer;
-}
-
-.prevIMG,
-.nextIMG {
-  cursor: pointer;
-  position: relative;
-  width: 12%;
-  padding: 0vw;
-  color: #604D53;
-  background-color: #604D53;
-  font-size: 200%;
-  border-radius: 0 3px 3px 0;
-}
-
-
-.prevIMG
-{
-  padding-left:0;
-}
-
-.nextIMG {
-  padding-right: 0;
-}
-
-/*Inverts color of buttons when hovered over to give feedback*/
-.prevIMG:hover,
-.nextIMG:hover {
-  color:#604D53;
-  background-color: #604D53;
 }
 
 .numbertext {

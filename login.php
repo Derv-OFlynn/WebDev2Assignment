@@ -64,7 +64,7 @@
 
             if (isset($_SESSION["error"])) 
             {
-                echo('<p style="color:red">Error:'.$_SESSION["error"].'</p>\n');
+                echo('<p style="color:red">Error:'.$_SESSION["error"].'</p></br>');
                 unset($_SESSION["error"]);
             }
 
