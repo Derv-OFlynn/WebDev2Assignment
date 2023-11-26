@@ -1,5 +1,5 @@
-<?php 
-    if(! isset(setcookie("user", "cookiename", time()+3600)));
+<?php
+
     session_start();
 
     unset($_SESSION["account"]);
@@ -12,7 +12,7 @@
         $uname = ($_POST["account"]);
         $pword = ($_POST["pw"]);
 
-        $sql = "SELECT userName, password FROM users WHERE username LIKE '$uname';";
+        $sql = "SELECT username, password FROM users WHERE username LIKE '$uname';";
 
         $result = $conn->query($sql);
 
@@ -22,7 +22,7 @@
             while($row = $result->fetch_assoc())
             {
 
-                if ($pword == htmlentities($row["Password"]))
+                if ($pword == htmlentities($row["password"]))
                 {
                     setcookie("user", $uname, time()+3600); 
                     $_SESSION["account"] = $_POST["account"];
@@ -34,14 +34,12 @@
             }
 
         }
-
         else 
         {
             $_SESSION["error"] = "Incorrect password.";
             header( 'Location: login.php' ) ;
             return;
         } 
-    
     } 
     
     else if (count($_POST) > 0)
@@ -56,9 +54,6 @@
 <html>
 
     <head>
-
-        <meta http-equiv="content-type" content="text/html;charset=iso" >
-
     </head>
     
     <body>       
@@ -66,12 +61,13 @@
         <h1>Please Log In </h1>
 
         <?php
-            if ( isset($_SESSION["error"]) ) 
+
+            if (isset($_SESSION["error"])) 
             {
-                echo('<p style="color:red">Error:'.
-                $_SESSION["error"]."</p>\n");
+                echo('<p style="color:red">Error:'.$_SESSION["error"].'</p>\n');
                 unset($_SESSION["error"]);
             }
+
         ?>
 
         <form method="post">

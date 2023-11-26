@@ -3,10 +3,10 @@
 - Database:
     - Add the foreign keys
     - Fill the tables with data
+    - Fill categories table
 
 - HTML:
     - Add website content
-    - Make navbar sticky to the top
     - Make common headers and footers(can I link them?)
 
 - CSS:
@@ -15,7 +15,6 @@
 
 - PHP:
     - Add Registration
-    - Add Login
     - Search for a book
     - Reserve a book (if it is not already reserved)
     - View reserved books
