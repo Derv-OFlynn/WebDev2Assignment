@@ -74,13 +74,24 @@
     <!--Welcome Content. Contains location information and a picture of the troop neckerchief-->
     <div class="MainContainer">
       	<div class="secondBorder">
-        	<h2 class ="ContentHeading"> Welcome to Coillteach Library! </h2>
+        	<h2 class ="ContentHeading"> Online </h2>
         	<p class = "ContainerParagraph">
-        		This library was founded in 2010 and sits near the TU Dublin Grangegorman City Campus. This website was created to allow 
-				users to interact with the library online. You can create an account, login, logout, reserve books and check the progress
-		  		of books you have already reserved!
-				<br> <br>
-				We hope you enjoy the use of this library to its fullest extent!
+
+                <br> <br>
+                    
+                Instagram: <a href="https://www.instagram.com/">@coillteachlib</a>
+				
+                <br> <br>
+
+                Facebook: <a href="https://www.facebook.com/">Coillteach Library</a>
+
+                <br> <br>
+
+                Twitter: <a href="https://www.twitter.com/">@coillteach_library</a>
+
+                <br> <br>
+
+                Email: <a href="https://www.gmail.com/">enquiries@ctlib.ie</a>
         	</p> 
 			<br>
       	</div>
@@ -90,19 +101,17 @@
     <!--Beaver Section Container-->
     <div class="MainContainer">
       <div class="secondBorder">
-        <h2 class ="ContentHeading"> PLACEHOLDER </h2>
+        <h2 class ="ContentHeading"> In-Person </h2>
         <p class = "ContainerParagraph">
 
           <br> <br>
-          Beaver Scouts are aged 6 to 8 years old and wear light blue jumpers. We have two beaver sections!
+          Open: 8:00 - 22:00 Monday - Friday and 10:00 - 18:00 on Weekends.
 
           <br> <br>
 
-          62nd Beavers meet on Wednesdays from 6:30 to 7:30
+          Closed: All Bank and Public Holidays 
 
           <br> <br>
-
-          71st Beavers meet on Mondays from 6:30 to 7:30
 		  
         </p> 
       </div>
