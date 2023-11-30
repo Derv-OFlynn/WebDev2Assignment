@@ -2,15 +2,17 @@
     session_start();
     
     if(isset($_SESSION["success"]) && isset($_COOKIE["name"]))
-	{
-		if($_SESSION["success"] != "Logged In" || ($_COOKIE["name"] == "cookiename"))
-		{
-			header("Location: login.php");
-		}
-	}
-	
+    {
+        if($_SESSION["success"] != "Logged In" || ($_COOKIE["name"] == "cookiename"))
+        {
+            header("Location: login.php");
+        }
+    }
+
 	require_once("database.php");
+
 ?>
+
 <!--
     Programmer: Derv O'Flynn
     Student Number: C22344363 
@@ -20,6 +22,7 @@
     Title: Index
     Description: This is the homepage for my Library website
 -->
+
 <html lang="en">
 
     <head>
@@ -103,25 +106,29 @@
                 <br>
                 <?php
 
-                    $sql = "SELECT ProductID, PName, Description, Price, Stock FROM product";
+                    $uname = $_COOKIE["user"];
+
+                    $sql = "SELECT ISBN, username, ReservedDate FROM reserved WHERE username LIKE '$uname';";
 
                     $result = $conn->query($sql);
 
                     if($result->num_rows > 0)
                     {
                         //output data of each row in the table
-                        echo "<table border = '1'>";
+                        echo '<table class="bord">';
 
                         while($row = $result->fetch_assoc())
                         {
                             echo "<tr><td>";
-                            echo (htmlentities($row["ProductID"]));
+                            echo (htmlentities($row["ISBN"]));
                             echo "</td><td>";;
-                            echo (htmlentities($row["PName"]));
+                            echo (htmlentities($row["username"]));
                             echo "</td><td>";
-                            echo (htmlentities($row["Description"]));
+                            echo (htmlentities($row["ReservedDate"]));
                             echo "</td></tr>\n";
                         }
+
+                        echo '</table>';
                     }
                     else
                     {
