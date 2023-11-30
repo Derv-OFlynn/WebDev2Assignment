@@ -243,6 +243,8 @@ div a
 /*stlying for most tables. Bord is the irish for table*/
 .bord
 {
+  border-color: #EEE9AA;
+  border-radius: 1;
   display: grid;
   place-items: center;
 }

@@ -1,7 +1,8 @@
 <?php
 
     session_start();
-
+    setcookie("user", "cookiename", time()+3600);
+    
     unset($_SESSION["account"]);
 
     require_once("database.php");

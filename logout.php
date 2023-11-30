@@ -41,23 +41,30 @@
         <div class="MainContainer">
             <div class="secondBorder">
                 <h2 class ="ContentHeading"> Thank you for coming </h2>
-                <p class = "ContainerParagraph">
+                <h4>
+                    <p class = "ContainerParagraph">
 
-                    <?php
-                        if ( isset($_SESSION["error"]) ) 
-                        {
-                            echo('<p style="color:red">Error:'.$_SESSION["error"]."</p>\n");
-                            unset($_SESSION["error"]);
-                        }
+                        <?php
 
-                        session_destroy();
-                        echo("You are now logged out</p>");
-                        
-                    ?>
-                
-                    <input class="BadgeButton" type="button" value="Login" onclick="location.href='login.php'; return false "></p>
+                            if (isset($_SESSION["error"])) 
+                            {
+                                echo('<p style="color:red">Error:'.$_SESSION["error"]."</p>\n");
+                                unset($_SESSION["error"]);
+                            }
 
-                </p> 
+                            setcookie("cookiename", "", time() - 3600);
+                            session_destroy();
+                            echo("You are now logged out");
+                            
+                        ?>
+
+                        <br> <br>
+
+                        <button class="BadgeButton"><a href="login.php">Login</a></button>
+                         
+                        <br> <br>
+                    </p>
+                </h4> 
                 <br>
             </div>
         </div>
