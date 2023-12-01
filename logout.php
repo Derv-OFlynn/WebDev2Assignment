@@ -1,7 +1,16 @@
 <?php
 	session_start();
-	
-	require_once("database.php");
+
+    unset($_SESSION["account"]);
+
+    if ( isset($_SESSION["error"]) ) 
+    {
+        echo('<p style="color:red">Error:'.$_SESSION["error"]."</p>\n");
+        unset($_SESSION["error"]);
+    }
+
+    session_destroy();
+
 ?>
 <!--
     Programmer: Derv O'Flynn
@@ -46,14 +55,6 @@
 
                         <?php
 
-                            if (isset($_SESSION["error"])) 
-                            {
-                                echo('<p style="color:red">Error:'.$_SESSION["error"]."</p>\n");
-                                unset($_SESSION["error"]);
-                            }
-
-                            setcookie("cookiename", "", time() - 3600);
-                            session_destroy();
                             echo("You are now logged out");
                             
                         ?>
@@ -70,25 +71,30 @@
         </div>
 
         <br>
-        <!--Beaver Section Container-->
+        <!--Contact Us block-->
         <div class="MainContainer">
-        <div class="secondBorder">
-            <h2 class ="ContentHeading"> PLACEHOLDER </h2>
-            <p class = "ContainerParagraph">
+            <div class="secondBorder">
+                <h2 class ="ContentHeading"> Online </h2>
+                <p class = "ContainerParagraph">
 
-            <br> <br>
-            Beaver Scouts are aged 6 to 8 years old and wear light blue jumpers. We have two beaver sections!
+                    <br> <br>
+                        
+                    Instagram: <a href="https://www.instagram.com/">@coillteachlib</a>
+                    
+                    <br> <br>
 
-            <br> <br>
+                    Facebook: <a href="https://www.facebook.com/">Coillteach Library</a>
 
-            62nd Beavers meet on Wednesdays from 6:30 to 7:30
+                    <br> <br>
 
-            <br> <br>
+                    Twitter: <a href="https://www.twitter.com/">@coillteach_library</a>
 
-            71st Beavers meet on Mondays from 6:30 to 7:30
-            
-            </p> 
-        </div>
+                    <br> <br>
+
+                    Email: <a href="https://www.gmail.com/">enquiries@ctlib.ie</a>
+                </p> 
+                <br>
+            </div>
         </div>
 
         <br> <br>

@@ -104,38 +104,50 @@
                 <h2 class ="ContentHeading"> RESERVED BOOKS </h2>
                 <p class = "ContainerParagraph">
                 <br>
-                <?php
 
-                    $uname = $_COOKIE["user"];
+                <table class="bord">
+                    <tr>
+                        <th> ISBN </th>
+                        <th> Title </th>
+                        <th> Author </th>
+                        <th> Your username </th>
+                        <th> Date Reserved </th>
+                    <?php
+                        
+                        $uname = $_COOKIE["user"];
 
-                    $sql = "SELECT ISBN, username, ReservedDate FROM reserved WHERE username LIKE '$uname';";
+                        $sql = "SELECT reserved.username, reserved.ReservedDate, books.ISBN, books.BookTitle, books.Author FROM reserved JOIN books USING (ISBN) WHERE reserved.username LIKE '$uname' ORDER BY ReservedDate DESC";
 
-                    $result = $conn->query($sql);
+                        $result = $conn->query($sql);
 
-                    if($result->num_rows > 0)
-                    {
-                        //output data of each row in the table
-                        echo '<table class="bord">';
-
-                        while($row = $result->fetch_assoc())
+                        if($result->num_rows > 0)
                         {
-                            echo "<tr><td>";
-                            echo (htmlentities($row["ISBN"]));
-                            echo "</td><td>";;
-                            echo (htmlentities($row["username"]));
-                            echo "</td><td>";
-                            echo (htmlentities($row["ReservedDate"]));
-                            echo "</td></tr>\n";
+                            //output data of each row in the table
+
+                            while($row = $result->fetch_assoc())
+                            {
+                                echo '<tr><td class="trasna">';
+                                echo (htmlentities($row["ISBN"]));
+                                echo '</td><td class="trasna">';
+                                echo (htmlentities($row["BookTitle"]));
+                                echo '</td><td class="trasna">';
+                                echo (htmlentities($row["Author"]));
+                                echo '</td><td class="trasna">';
+                                echo (htmlentities($row["username"]));
+                                echo '</td><td class="trasna">';
+                                echo (htmlentities($row["ReservedDate"]));
+                                echo "</td></tr>\n";
+                            }
+
+                        }
+                        else
+                        {
+                            echo "0 results";
                         }
 
-                        echo '</table>';
-                    }
-                    else
-                    {
-                        echo "0 results";
-                    }
+                    ?>
 
-                ?>
+                </table>
                 </p> 
             </div>
         </div>

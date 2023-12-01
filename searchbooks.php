@@ -1,13 +1,13 @@
 <?php
     session_start();
     
-    if(isset($_SESSION["success"]) && isset($_COOKIE["name"]))
-    {
-        if($_SESSION["success"] != "Logged In" || ($_COOKIE["name"] == "cookiename"))
-        {
-            header("Location: login.php");
-        }
-    }
+	if(isset($_SESSION["success"]) && isset($_COOKIE["name"]))
+	{
+		if($_SESSION["success"] != "Logged In" || ($_COOKIE["name"] == "cookiename"))
+		{
+			header("Location: login.php");
+		}
+	}
 
 	require_once("database.php");
 

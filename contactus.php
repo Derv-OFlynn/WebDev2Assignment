@@ -1,9 +1,9 @@
 <?php
 	session_start();
 
-	if(isset($_SESSION["success"]) && isset($_COOKIE["name"]))
+	if(isset($_SESSION["success"]) && isset($_COOKIE["value"]))
 	{
-		if($_SESSION["success"] != "Logged In" || ($_COOKIE["name"] == "cookiename"))
+		if($_SESSION["success"] != "Logged In" || ($_COOKIE["value"] == "cookievalue"))
 		{
 			header("Location: login.php");
 		}
@@ -71,7 +71,7 @@
 
     <br> <br>
 
-    <!--Welcome Content. Contains location information and a picture of the troop neckerchief-->
+    <!--Contact Us block-->
     <div class="MainContainer">
       	<div class="secondBorder">
         	<h2 class ="ContentHeading"> Online </h2>

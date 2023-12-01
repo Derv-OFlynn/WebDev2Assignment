@@ -243,16 +243,28 @@ div a
 /*stlying for most tables. Bord is the irish for table*/
 .bord
 {
-  border-color: #EEE9AA;
-  border-radius: 1;
+  border-width: 5px;
+  border-style: solid;
+  border-radius: 5px;
   display: grid;
   place-items: center;
+  border-color: #EEE9AA;
 }
 
-th, td
+.trasna
+{
+	border-width: 5px;
+	border-style: solid;
+	border-radius: 5px;
+	border-color: #EEE9AA;
+	display: grid;
+}
+
+th, td, tr
 {
   color:#EEE9AA;
   padding-top: 5%;
+  border: 5px solid #EEE9AA;
 }
 
 

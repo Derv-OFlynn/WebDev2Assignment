@@ -1,9 +1,9 @@
 <?php
 	session_start();
 
-	if(isset($_SESSION["success"]) && isset($_COOKIE["name"]))
+	if(isset($_SESSION["success"]) && isset($_COOKIE["value"]))
 	{
-		if($_SESSION["success"] != "Logged In" || ($_COOKIE["name"] == "cookiename"))
+		if($_SESSION["success"] != "Logged In" || ($_COOKIE["value"] == "cookievalue"))
 		{
 			header("Location: login.php");
 		}
