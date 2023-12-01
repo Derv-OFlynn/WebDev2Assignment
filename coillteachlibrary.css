@@ -240,6 +240,21 @@ div a
   text-align: center;
 }
 
+th, td, tr
+{
+  color:#EEE9AA;
+  padding-top: 5%;
+  border: 5px solid #EEE9AA;
+}
+
+.trasna
+{
+	border-width: 5px;
+	border-style: solid;
+	border-radius: 5px;
+	border-color: #EEE9AA;
+}
+
 /*stlying for most tables. Bord is the irish for table*/
 .bord
 {
@@ -249,22 +264,6 @@ div a
   display: grid;
   place-items: center;
   border-color: #EEE9AA;
-}
-
-.trasna
-{
-	border-width: 5px;
-	border-style: solid;
-	border-radius: 5px;
-	border-color: #EEE9AA;
-	display: grid;
-}
-
-th, td, tr
-{
-  color:#EEE9AA;
-  padding-top: 5%;
-  border: 5px solid #EEE9AA;
 }
 
 
