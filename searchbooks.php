@@ -29,7 +29,7 @@
         <!--Bootstrap CSS-->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <!--Local CSS-->
-        <link rel="stylesheet" href="coillteachlibrary.css">
+        <link rel="stylesheet" href="coillteachlibrary.css?c=<?php echo time(); ?>">
         <title> My Account</title> 
         <meta charset="UTF-8"> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -79,17 +79,17 @@
         <!--Welcome Content. Contains location information and a picture of the troop neckerchief-->
         <div class="MainContainer">
             <div class="secondBorder">
-                <h2 class ="ContentHeading"> What would you like to do? </h2>
+                <h2 class ="ContentHeading"> Search for a book </h2>
                 <h4>
                     <p class = "ContainerParagraph">
 
                         <br> <br>
 
-                        <button class="BadgeButton"><a href="searchbooks.php">Reserve a Book</a></button>
+                        <form action="users.php" method="GET">
+                        <input id="search" type="text" placeholder="Type here">
+                        <input id="submit" type="submit" value="Search"> 
 
                         <br> <br>
-
-                        <button class="BadgeButton"><a href="logout.php">Log Out</a></button>
 
                     </p> 
                 </h4>
@@ -104,38 +104,49 @@
                 <h2 class ="ContentHeading"> RESERVED BOOKS </h2>
                 <p class = "ContainerParagraph">
                 <br>
-                <?php
+                <table class="bord">
+                    <tr>
+                        <th> ISBN </th>
+                        <th> Title </th>
+                        <th> Author </th>
+                        <th> Your username </th>
+                        <th> Date Reserved </th>
+                    <?php
+                        
+                        $uname = $_COOKIE["user"];
 
-                    $uname = $_COOKIE["user"];
+                        $sql = "SELECT reserved.username, reserved.ReservedDate, books.ISBN, books.BookTitle, books.Author FROM reserved JOIN books USING (ISBN) WHERE reserved.username LIKE '$uname' ORDER BY ReservedDate DESC";
 
-                    $sql = "SELECT ISBN, username, ReservedDate FROM reserved WHERE username LIKE '$uname';";
+                        $result = $conn->query($sql);
 
-                    $result = $conn->query($sql);
-
-                    if($result->num_rows > 0)
-                    {
-                        //output data of each row in the table
-                        echo '<table class="bord">';
-
-                        while($row = $result->fetch_assoc())
+                        if($result->num_rows > 0)
                         {
-                            echo "<tr><td>";
-                            echo (htmlentities($row["ISBN"]));
-                            echo "</td><td>";;
-                            echo (htmlentities($row["username"]));
-                            echo "</td><td>";
-                            echo (htmlentities($row["ReservedDate"]));
-                            echo "</td></tr>\n";
+                            //output data of each row in the table
+
+                            while($row = $result->fetch_assoc())
+                            {
+                                echo '<tr><td class="trasna">';
+                                echo (htmlentities($row["ISBN"]));
+                                echo '</td><td class="trasna">';
+                                echo (htmlentities($row["BookTitle"]));
+                                echo '</td><td class="trasna">';
+                                echo (htmlentities($row["Author"]));
+                                echo '</td><td class="trasna">';
+                                echo (htmlentities($row["username"]));
+                                echo '</td><td class="trasna">';
+                                echo (htmlentities($row["ReservedDate"]));
+                                echo "</td></tr>\n";
+                            }
+
+                        }
+                        else
+                        {
+                            echo "0 results";
                         }
 
-                        echo '</table>';
-                    }
-                    else
-                    {
-                        echo "0 results";
-                    }
+                    ?>
 
-                ?>
+                </table>
                 </p> 
             </div>
         </div>

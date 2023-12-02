@@ -258,12 +258,8 @@ th, td, tr
 /*stlying for most tables. Bord is the irish for table*/
 .bord
 {
-  border-width: 5px;
-  border-style: solid;
-  border-radius: 5px;
   display: grid;
   place-items: center;
-  border-color: #EEE9AA;
 }
 
 
