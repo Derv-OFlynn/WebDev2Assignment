@@ -112,45 +112,47 @@
                         <th> Author </th>
                         <th> Edition </th>
                         <th> Year </th>
+                        <th> Category </th>
                         <th> Reserved </th>
                     <?php
                         
                         $user_search = ($_POST["searchq"]);
 
-                        $sql = ("SELECT * FROM books WHERE books.Author LIKE '%$user_search%' or books.BookTitle LIKE '%$user_search%' ORDER BY Author DESC LIMIT 5;");
+                        $sql = ("SELECT books.ISBN, books.BookTitle, books.Author, books.Edition, books.Year, categories.CategoryDesc, books.Reserved FROM books JOIN categories ON books.Category = categories.CategoryID WHERE books.Author LIKE '%$user_search%' or books.BookTitle LIKE '%$user_search%' ORDER BY Author DESC LIMIT 5;");
 
                         $result = $conn->execute_query($sql);
                         
-                        for($i = 0; $i < 5; $i++)
+
+                        if($result->num_rows > 0)
                         {
-                            if($result->num_rows > 0)
-                            {
-                                //output data of each row in the table
+                            //output data of each row in the table
 
-                                while($row = $result->fetch_assoc())
-                                {
-                                    echo '<tr><td class="trasna">';
-                                    echo (htmlentities($row["ISBN"]));
-                                    echo '</td><td class="trasna">';
-                                    echo (htmlentities($row["BookTitle"]));
-                                    echo '</td><td class="trasna">';
-                                    echo (htmlentities($row["Author"]));
-                                    echo '</td><td class="trasna">';
-                                    echo (htmlentities($row["Edition"]));
-                                    echo '</td><td class="trasna">';
-                                    echo (htmlentities($row["Year"]));
-                                    echo '</td><td class="trasna">';
-                                    echo (htmlentities($row["Reserved"]));
-                                    echo "</td></tr>\n";
-                                }
-
-                            }
-                            else
+                            while($row = $result->fetch_assoc())
                             {
-                                echo "0 results";
+                                echo '<tr><td class="trasna">';
+                                echo (htmlentities($row["ISBN"]));
+                                echo '</td><td class="trasna">';
+                                echo (htmlentities($row["BookTitle"]));
+                                echo '</td><td class="trasna">';
+                                echo (htmlentities($row["Author"]));
+                                echo '</td><td class="trasna">';
+                                echo (htmlentities($row["Edition"]));
+                                echo '</td><td class="trasna">';
+                                echo (htmlentities($row["Year"]));
+                                echo '</td><td class="trasna">';
+                                echo (htmlentities($row["CategoryDesc"]));
+                                echo '</td><td class="trasna">';
+                                echo (htmlentities($row["Reserved"]));
+                                echo "</td></tr>\n";
                             }
 
                         }
+                        else
+                        {
+                            echo "0 results";
+                        }
+
+                        
 
                     ?>
 
