@@ -85,9 +85,10 @@
 
                         <br> <br>
 
-                        <form action="users.php" method="GET">
-                        <input id="search" type="text" placeholder="Type here">
+                        <form action="searchbooks.php" method="post">
+                        <input id="search" name="searchq" type="text" placeholder="Search for a book or author">
                         <input id="submit" type="submit" value="Search"> 
+                        </form>
 
                         <br> <br>
 
@@ -101,7 +102,7 @@
         <!--Beaver Section Container-->
         <div class="MainContainer">
             <div class="secondBorder">
-                <h2 class ="ContentHeading"> RESERVED BOOKS </h2>
+                <h2 class ="ContentHeading"> Results for "<?php echo $_POST["searchq"]; ?>" </h2>
                 <p class = "ContainerParagraph">
                 <br>
                 <table class="bord">
@@ -109,39 +110,46 @@
                         <th> ISBN </th>
                         <th> Title </th>
                         <th> Author </th>
-                        <th> Your username </th>
-                        <th> Date Reserved </th>
+                        <th> Edition </th>
+                        <th> Year </th>
+                        <th> Reserved </th>
                     <?php
                         
-                        $uname = $_COOKIE["user"];
+                        $user_search = ($_POST["searchq"]);
 
-                        $sql = "SELECT reserved.username, reserved.ReservedDate, books.ISBN, books.BookTitle, books.Author FROM reserved JOIN books USING (ISBN) WHERE reserved.username LIKE '$uname' ORDER BY ReservedDate DESC";
+                        $sql = ("SELECT * FROM books WHERE books.Author LIKE '%$user_search%' or books.BookTitle LIKE '%$user_search%' ORDER BY Author DESC LIMIT 5;");
 
-                        $result = $conn->query($sql);
-
-                        if($result->num_rows > 0)
+                        $result = $conn->execute_query($sql);
+                        
+                        for($i = 0; $i < 5; $i++)
                         {
-                            //output data of each row in the table
-
-                            while($row = $result->fetch_assoc())
+                            if($result->num_rows > 0)
                             {
-                                echo '<tr><td class="trasna">';
-                                echo (htmlentities($row["ISBN"]));
-                                echo '</td><td class="trasna">';
-                                echo (htmlentities($row["BookTitle"]));
-                                echo '</td><td class="trasna">';
-                                echo (htmlentities($row["Author"]));
-                                echo '</td><td class="trasna">';
-                                echo (htmlentities($row["username"]));
-                                echo '</td><td class="trasna">';
-                                echo (htmlentities($row["ReservedDate"]));
-                                echo "</td></tr>\n";
+                                //output data of each row in the table
+
+                                while($row = $result->fetch_assoc())
+                                {
+                                    echo '<tr><td class="trasna">';
+                                    echo (htmlentities($row["ISBN"]));
+                                    echo '</td><td class="trasna">';
+                                    echo (htmlentities($row["BookTitle"]));
+                                    echo '</td><td class="trasna">';
+                                    echo (htmlentities($row["Author"]));
+                                    echo '</td><td class="trasna">';
+                                    echo (htmlentities($row["Edition"]));
+                                    echo '</td><td class="trasna">';
+                                    echo (htmlentities($row["Year"]));
+                                    echo '</td><td class="trasna">';
+                                    echo (htmlentities($row["Reserved"]));
+                                    echo "</td></tr>\n";
+                                }
+
+                            }
+                            else
+                            {
+                                echo "0 results";
                             }
 
-                        }
-                        else
-                        {
-                            echo "0 results";
                         }
 
                     ?>

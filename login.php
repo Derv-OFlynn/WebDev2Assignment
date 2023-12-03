@@ -15,7 +15,7 @@
 
         $sql = "SELECT username, password FROM users WHERE username LIKE '$uname';";
 
-        $result = $conn->query($sql);
+        $result = $conn->execute_query($sql);
 
         if ($result->num_rows > 0)
         {
