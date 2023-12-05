@@ -118,7 +118,7 @@
 
                         $sql = "SELECT reserved.username, reserved.ReservedDate, books.ISBN, books.BookTitle, books.Author FROM reserved JOIN books USING (ISBN) WHERE reserved.username LIKE '$uname' ORDER BY ReservedDate DESC";
 
-                        $result = $conn->execute_queryquery($sql);
+                        $result = $conn->execute_query($sql);
 
                         if($result->num_rows > 0)
                         {

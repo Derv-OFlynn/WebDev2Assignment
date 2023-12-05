@@ -8,9 +8,9 @@
         echo('<p style="color:red">Error:'.$_SESSION["error"]."</p>\n");
         unset($_SESSION["error"]);
     }
-
+    setcookie("cookiename", "cookievalue", time() - 3600);
     session_destroy();
-
+    setcookie("cookiename", "cookievalue", time() - 3600);
 ?>
 <!--
     Programmer: Derv O'Flynn
