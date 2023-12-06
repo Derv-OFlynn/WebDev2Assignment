@@ -224,7 +224,8 @@ footer
 
 div ul
 {
-  text-align: center;
+  text-align: left;
+  color:#EEE9AA;
 }
 
 ol
@@ -271,19 +272,35 @@ form
 
 
 /* Contact form stylings */
-input[type=text], select, textarea {
+input[type=text], select, textarea 
+{
   width: 70%; /* Full width */
   padding: 0.5%; /* Some padding */ 
-  border: 1px solid #ccc; /* Gray border */
+  border: 2px solid #EEE9AA; /* Gray border */
   border-radius: 4px; /* Rounded borders */
   box-sizing: border-box; /* Make sure that padding and width stays in place */
   margin-top: 3%; /* Add a top margin */
   margin-bottom: 3%; /* Bottom margin */
   resize: vertical;
+  color: #EEE9AA;
+  background-color: #313638;
+  outline-width: 0;
+  outline: none;
+}
+
+input[type=text]:focus, textarea:focus 
+{
+  box-shadow: 1px 1px 5px #EEE9AA;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 3px solid #EEE9AA;
+  outline-width: 0;
+  outline: none;
 }
 
 
-input[type=submit] {
+input[type=submit] 
+{
   background-color: #604D53;
   color: #EEE9AA;
   padding: 12px 20px;
@@ -292,7 +309,8 @@ input[type=submit] {
   cursor: pointer;
 }
 
-input[type=submit]:hover {
+input[type=submit]:hover 
+{
   background-color: darkgoldenrod;
 }
 

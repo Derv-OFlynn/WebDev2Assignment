@@ -15,7 +15,7 @@
         $pword = ($_POST["pw"]);
         $phnum = ($_POST["phoneno"]);
 
-        $sql = "SELECT username, password FROM users WHERE username LIKE '$uname';";
+        $sql = "INSERT INTO users FROM users WHERE username LIKE '$uname';";
 
         $result = $conn->execute_query($sql);
 
@@ -124,16 +124,53 @@
                         <input type="text" name="pw" value="">
                     </p>
 
+                    <p class = "ContainerParagraph">First name: 
+                        <br>
+                        <input type="text" name="firstname" value="">
+                    </p>
+
+                    <p class = "ContainerParagraph">Surname: 
+                        <br>
+                        <input type="text" name="surname" value="">
+                    </p>
+
+                    <p class = "ContainerParagraph">Address Line 1: 
+                        <br>
+                        <input type="text" name="address1" value="">
+                    </p>
+
+                    <p class = "ContainerParagraph">Address Line 2: 
+                        <br>
+                        <input type="text" name="address2" value="">
+                    </p>
+
+                    <p class = "ContainerParagraph">City: 
+                        <br>
+                        <input type="text" name="city" value="">
+                    </p>
+
                     <p class = "ContainerParagraph">Phone Number:
                         <br>
                         <input type="text" name="phoneno" value="">
                     </p>
 
+                    <p class = "ContainerParagraph">Mobile Number: 
+                        <br>
+                        <input type="text" name="mobileno" value="">
+                    </p>
+
                     <p><input type="submit" value="Register"></p>
+
+                    <br> <br>
+
+                    <p class = "ContainerParagraph">
+                    Already have an account? Log in here:
+                    </p>
+                    <button class="BadgeButton"><a href="login.php">Login</a></button>
                 </form>
             </div>
         </div>
-
+            
         <br>
         <!--Contact Us block-->
         <div class="MainContainer">

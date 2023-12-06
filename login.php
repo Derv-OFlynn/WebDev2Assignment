@@ -116,7 +116,9 @@
                     <p><input type="submit" value="Login"></p>
 
                     <br> <br>
-
+                    <p class = "ContainerParagraph">
+                        No account? Make one here:
+                    </p>
                     <button class="BadgeButton"><a href="register.php">Register New User</a></button>
                     
                     <br> <br>
