@@ -1,6 +1,8 @@
 <?php
 	session_start();
 
+    setcookie("cookiename", "cookievalue");
+    
     unset($_SESSION["account"]);
 
     if ( isset($_SESSION["error"]) ) 

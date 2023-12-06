@@ -1,7 +1,8 @@
 <?php
 
-    setcookie("cookiename", "cookievalue");
     session_start();
+
+    setcookie("cookiename", "cookievalue");
     
     unset($_SESSION["account"]);
 
@@ -112,7 +113,13 @@
                         <br>
                         <input type="text" name="pw" value="">
                     </p>
-                    <p><input type="submit" value="Log In"></p>
+                    <p><input type="submit" value="Login"></p>
+
+                    <br> <br>
+
+                    <button class="BadgeButton"><a href="register.php">Register New User</a></button>
+                    
+                    <br> <br>
                 </form>
             </div>
         </div>
