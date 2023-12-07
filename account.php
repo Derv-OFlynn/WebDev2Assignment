@@ -10,7 +10,11 @@
     }
 
 	require_once("database.php");
-
+    	
+    if(isset($_COOKIE["user"]))
+    {
+        $uname = $_COOKIE["user"];
+    }
 ?>
 
 <!--
@@ -79,7 +83,7 @@
         <!--Welcome Content. Contains location information and a picture of the troop neckerchief-->
         <div class="MainContainer">
             <div class="secondBorder">
-                <h2 class ="ContentHeading"> What would you like to do? </h2>
+                <h2 class ="ContentHeading"><?php if(isset($_COOKIE["user"])){echo $_COOKIE["user"];} ?> What would you like to do? </h2>
                 <h4>
                     <p class = "ContainerParagraph">
 

@@ -11,6 +11,19 @@
 
 	require_once("database.php");
 
+    if(isset($_POST["Reserve"]))
+    {
+        $isbn = $_POST["ISBN"];
+        $change = "UPDATE books SET Reserved = 'Y' WHERE ISBN = '$isbn';";
+        $conn->execute_query($change);
+
+        $uname = $_COOKIE["user"];
+        $now = date("Y-m-d");
+
+        $reserve = "INSERT INTO reserved(ISBN, username, ReservedDate) VALUES('$isbn', '$uname', '$now');";
+        $conn->execute_query($reserve);
+    }
+
 ?>
 
 <!--
@@ -144,15 +157,19 @@
                                     echo '</td><td class="trasna">';
                                     echo (htmlentities($row["CategoryDesc"]));
                                     echo '</td><td class="trasna">';
-                                    echo '<form action="searchbooks.php" method="post"> <input id="submit" type="submit" value="Reserve"> </form>';
+                                    if (htmlentities($row["Reserved"] == "N"))
+                                    {
+                                        echo '<form action="searchbooks.php" method="post"> <input type="hidden" name="ISBN" value="' . htmlentities($row["ISBN"]) . '"> <input id="submit" type="submit" name ="Reserve" value="Reserve"> </form>';
+                                    }
+                                    else
+                                    {
+                                        echo 'Already Reserved';
+                                    }
+                                    
                                     echo "</td></tr>\n";
+
                                 }
 
-                    
-                            }
-                            else
-                            {
-                                echo "0 results";
                             }
 
                         }

@@ -248,11 +248,21 @@ div a
   text-align: center;
 }
 
-th, td, tr
+td, tr
 {
   color:#EEE9AA;
   padding-top: 5%;
   border: 5px solid #EEE9AA;
+  border-radius: 5px;
+}
+
+th
+{
+  color:#313638;
+  background-color: #EEE9AA;
+  padding-top: 5%;
+  border: 5px solid #EEE9AA;
+  border-radius: 5px;
 }
 
 .trasna
@@ -269,6 +279,7 @@ th, td, tr
   display: grid;
   place-items: center;
   word-wrap: break-word;
+  border-radius: 5px;
 }
 
 
