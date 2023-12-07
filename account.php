@@ -15,6 +15,16 @@
     {
         $uname = $_COOKIE["user"];
     }
+
+    if(isset($_POST["Un-Reserve"]))
+    {
+        $isbn = $_POST["ISBN"];
+        $change = "UPDATE books SET Reserved = 'N' WHERE ISBN = '$isbn';";
+        $conn->execute_query($change);
+
+        $unreserve = "DELETE FROM reserved WHERE ISBN = '$isbn';";
+        $conn->execute_query($unreserve);
+    }
 ?>
 
 <!--
@@ -116,6 +126,7 @@
                         <th> Author </th>
                         <th> Your username </th>
                         <th> Date Reserved </th>
+                        <th> Un-reserve</th>
                     <?php
 
                         if(isset($_COOKIE["user"]))
@@ -142,6 +153,8 @@
                                     echo (htmlentities($row["username"]));
                                     echo '</td><td class="trasna">';
                                     echo (htmlentities($row["ReservedDate"]));
+                                    echo '</td><td class="trasna">';
+                                    echo '<form action="account.php" method="post"> <input type="hidden" name="ISBN" value="' . htmlentities($row["ISBN"]) . '"> <input id="submit" type="submit" name ="Un-Reserve" value="Un-Reserve"> </form>';
                                     echo '</td></tr">';
 
                                 }

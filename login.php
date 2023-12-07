@@ -42,6 +42,7 @@
             header( 'Location: login.php' ) ;
             return;
         } 
+        
     } 
     
     else if (count($_POST) > 0)
@@ -59,7 +60,7 @@
     Start Date: 08/11/2023
     End Date: 08/12/2023
     Purpose: CA Assignment
-    Title: Index
+    Title: Login
     Description: This is the homepage for my Library website
 -->
 <html lang="en">
@@ -111,7 +112,7 @@
 
                     <p class = "ContainerParagraph">Password:
                         <br>
-                        <input type="text" name="pw" value="">
+                        <input type="password" name="pw" value="" maxlength="6">
                     </p>
                     <p><input type="submit" value="Login"></p>
 

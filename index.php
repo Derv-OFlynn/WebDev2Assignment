@@ -1,4 +1,5 @@
 <?php
+	#Starts session. If user is not logged in, they are sent to the login page
 	session_start();
 
 	if(isset($_SESSION["success"]) && isset($_COOKIE["value"]))
@@ -9,6 +10,7 @@
 		}
 	}
 	
+	#Starts the connection to the database
 	require_once("database.php");
 ?>
 <!--
@@ -38,12 +40,15 @@
 
     <!--Navbar. Contains a dropdown menu that auto-scrolls to selected content. Made using bootstrap and own work -->
     <div class="menuDerv"> 
+		<!--Bootstrap Nav-bar-->
 		<nav class="navbar navbar-expand-lg navbar-dark">
+			<!--If the screen is narrow, the nav-bar will collapse into a toggle-able button that reformats it vertically-->
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNavDropdown">
 				<ul class="navbar-nav">
+					<!--Link to current page if user needs to refresh -->
 					<li class="nav-item">
 						<a class="nav-link" href="index.php"><h3>Home</h3></a>
 					</li>
@@ -71,7 +76,7 @@
 
     <br> <br>
 
-    <!--Welcome Content. Contains location information and a picture of the troop neckerchief-->
+    <!--Welcome Content. Contains Information and History-->
     <div class="MainContainer">
       	<div class="secondBorder">
         	<h2 class ="ContentHeading"> Welcome to Coillteach Library! </h2>
@@ -86,26 +91,32 @@
       	</div>
     </div>
 
-    <br>
-    <!--Beaver Section Container-->
+	<br> <br>
+
+    <!--Contact Us block-->
     <div class="MainContainer">
-      <div class="secondBorder">
-        <h2 class ="ContentHeading"> PLACEHOLDER </h2>
-        <p class = "ContainerParagraph">
+      	<div class="secondBorder">
+        	<h2 class ="ContentHeading"> Contact Us </h2>
+        	<p class = "ContainerParagraph">
 
-          <br> <br>
-          Beaver Scouts are aged 6 to 8 years old and wear light blue jumpers. We have two beaver sections!
+                <br> <br>
+                    
+                Instagram: <a href="https://www.instagram.com/">@coillteachlib</a>
+				
+                <br> <br>
 
-          <br> <br>
+                Facebook: <a href="https://www.facebook.com/">Coillteach Library</a>
 
-          62nd Beavers meet on Wednesdays from 6:30 to 7:30
+                <br> <br>
 
-          <br> <br>
+                Twitter: <a href="https://www.twitter.com/">@coillteach_library</a>
 
-          71st Beavers meet on Mondays from 6:30 to 7:30
-		  
-        </p> 
-      </div>
+                <br> <br>
+
+                Email: <a href="https://www.gmail.com/">enquiries@ctlib.ie</a>
+        	</p> 
+			<br>
+        </div>
     </div>
 
     <br> <br>
@@ -129,8 +140,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <!--Local Script-->
-    <script src="Scripts\coillteachlib.js"></script>
     <!--End of scripts-->
   </body>
 </html>
