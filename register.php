@@ -8,7 +8,7 @@
 
     require_once("database.php");
 
-    if (isset($_POST["account"]) && isset($_POST["pw"]) && isset($_POST["phoneno"]) && isset($_POST["firstname"]) && isset($_POST["surname"]) && isset($_POST["address1"]) && isset($_POST["address2"]) && isset($_POST["city"]) && isset($_POST["mobileno"]))
+    if (isset($_POST["account"]) && isset($_POST["pw"]) && isset($_POST["phoneno"]) && isset($_POST["firstname"]) && isset($_POST["surname"]) && isset($_POST["address1"]) && isset($_POST["address2"]) && isset($_POST["city"]) && isset($_POST["mobileno"]) && isset($_POST["pw2"]) && $_POST["pw"] == $_POST["pw2"])
     { 
 
         $uname = ($_POST["account"]);
@@ -38,10 +38,9 @@
         $result = $conn->execute_query($sql);
 
     } 
-    
     else if (count($_POST) > 0)
     { 
-        $_SESSION["error"] = "Missing Required Information";
+        $_SESSION["error"] = "Missing Required Information or Passwords do not match.";
         header( 'Location: register.php' ) ;
         return;
     }
@@ -104,51 +103,57 @@
                         <li>Your username must be unique to you </li>
                         <li>Your password must be 6 characters long</li>
                         <li>Your mobile number must be 10 characters long</li>
+                        <li>Passwords must match!</li>
                     </ul>
                 </p>
 
                 <form class="ContainerParagrpah" method="post">
-                    <p class = "ContainerParagraph">Username: 
+                    <p class = "ContainerParagraph">Username*: 
                         <br>
                         <input type="text" name="account" value="">
                     </p>
 
-                    <p class = "ContainerParagraph">Password:
+                    <p class = "ContainerParagraph">Password*:
                         <br>
                         <input type="text" name="pw" value="" maxlength="6">
                     </p>
 
-                    <p class = "ContainerParagraph">First name: 
+                    <p class = "ContainerParagraph">Confirm Password*:
+                        <br>
+                        <input type="text" name="pw2" value="" maxlength="6">
+                    </p>
+
+                    <p class = "ContainerParagraph">First name*: 
                         <br>
                         <input type="text" name="firstname" value="">
                     </p>
 
-                    <p class = "ContainerParagraph">Surname: 
+                    <p class = "ContainerParagraph">Surname*: 
                         <br>
                         <input type="text" name="surname" value="">
                     </p>
 
-                    <p class = "ContainerParagraph">Address Line 1: 
+                    <p class = "ContainerParagraph">Address Line 1*: 
                         <br>
                         <input type="text" name="address1" value="">
                     </p>
 
-                    <p class = "ContainerParagraph">Address Line 2: 
+                    <p class = "ContainerParagraph">Address Line 2*: 
                         <br>
                         <input type="text" name="address2" value="">
                     </p>
 
-                    <p class = "ContainerParagraph">City: 
+                    <p class = "ContainerParagraph">City*: 
                         <br>
                         <input type="text" name="city" value="">
                     </p>
 
-                    <p class = "ContainerParagraph">Phone Number:
+                    <p class = "ContainerParagraph">Phone Number*:
                         <br>
                         <input type="text" name="phoneno" value="" maxlength="10">
                     </p>
 
-                    <p class = "ContainerParagraph">Mobile Number: 
+                    <p class = "ContainerParagraph">Mobile Number*: 
                         <br>
                         <input type="text" name="mobileno" value="">
                     </p>
@@ -158,7 +163,7 @@
                     <br> <br>
 
                     <p class = "ContainerParagraph">
-                    Already have an account? Log in here:
+                        Already have an account? Log in here:
                     </p>
                     <button class="BadgeButton"><a href="login.php">Login</a></button>
                 </form>

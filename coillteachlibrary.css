@@ -436,38 +436,13 @@ label
 
 .MapEmbed
 {
-  height: 40%;
-  width: 80%;
-  border: 2px solid #604D53;
-  border-radius: 5px;
+	height: 40%;
+	width: 80%;
+	border: 2px solid #604D53;
+	border-radius: 5px;
 }
 
-/*Slideshow styling and brute force because jaysus*/
-.container {
-position: static;
-}
 
-.numbertext {
-  color: darkgoldenrod;
-  padding: 0;
-  position:relative;
-}
-
-.caption-container {
-  text-align: center;
-  background-color: #EEE9AA;
-  padding: 2px 16px;
-  color: #EEE9AA;
-}
-
-/*Styling for the anniversary book pages*/
-.SilverJubilee
-{
-  display: flex;
-  justify-items: center;
-  align-items: center;
-  height:70vh;
-}
 
 /*MEDIA QUERIES!!!!*/
 /* Extra small devices (phones, 600px and down) */
