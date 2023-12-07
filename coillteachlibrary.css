@@ -136,10 +136,15 @@ a:hover
   color: #E3DA78;
 }
 
-.navbar-light .navbar-nav .nav-link {
+.navbar-light .navbar-nav .nav-link 
+{
     color: darkgoldenrod;
-  }
+}
 
+.dropdown-item:hover {
+	color: #EEE9AA;
+	background-color: #313638;
+}
 
 .footer
 {
@@ -377,6 +382,7 @@ label
 {
   background-color: #EEE9AA;
   border-color: #EEE9AA;
+  color: #604D53;
 }
 
 .BadgeButton a
@@ -394,6 +400,38 @@ label
 	border-color: #EEE9AA;
 	border-radius: 5px;
 	text-decoration: none;
+}
+
+.BadgeButton a :active
+{
+  background-color: #EEE9AA;
+  border-color: #EEE9AA;
+  color: #604D53;
+}
+
+.BadgeButton a :visited
+{
+  background-color: #EEE9AA;
+  border-color: #EEE9AA;
+  color: #604D53;
+}
+
+.btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show > .btn-secondary.dropdown-toggle 
+{
+	color: #604D53;
+	background-color: #EEE9AA;
+	border-color: #EEE9AA;
+}
+
+.btn-secondary:not(:disabled):not(.disabled).active:focus, .btn-secondary:not(:disabled):not(.disabled):active:focus, .show > .btn-secondary.dropdown-toggle:focus {
+	box-shadow: 0 0 0 .2rem rgba(130,138,145, 0);
+  }
+
+.dropdown-menu
+{
+	background-color: rgb(0, 0, 0, 0);
+	border: 1px solid rgba(0,0,0,0);
+	overflow-y: visible;
 }
 
 .MapEmbed

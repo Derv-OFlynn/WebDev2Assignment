@@ -105,6 +105,26 @@
 
                         <br> <br>
 
+                        <div class="dropdown ContainerParagraph">
+                            <button class="btn btn-secondary dropdown-toggle BadgeButton" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Search By Category
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <form  action="searchbooks.php" method="post">
+                                    <input class="dropdown-item BadgeButton" id="Health" type="submit" name ="csearch" value="Health">
+                                    <input class="dropdown-item BadgeButton" id="Business" type="submit" name ="csearch" value="Business">
+                                    <input class="dropdown-item BadgeButton" id="Biography" type="submit" name ="csearch" value="Biography">
+                                    <input class="dropdown-item BadgeButton" id="Technology" type="submit" name ="csearch" value="Technology">
+                                    <input class="dropdown-item BadgeButton" id="Travel" type="submit" name ="csearch" value="Travel">
+                                    <input class="dropdown-item BadgeButton" id="Self-Help" type="submit" name ="csearch" value="Self-Help">
+                                    <input class="dropdown-item BadgeButton" id="Cookery" type="submit" name ="csearch" value="Cookery">
+                                    <input class="dropdown-item BadgeButton" id="Fiction" type="submit" name ="csearch" value="Fiction">
+                                </form>
+                            </div>
+                        </div> 
+                        
+                        <br> <br>
+
                     </p> 
                 </h4>
                 <br>
@@ -115,7 +135,7 @@
         <!--Beaver Section Container-->
         <div class="MainContainer">
             <div class="secondBorder">
-                <h2 class ="ContentHeading"> Results for "<?php if(isset($_POST["searchq"])){echo $_POST["searchq"];} ?>" </h2>
+                <h2 class ="ContentHeading"> Results for "<?php if(isset($_POST["searchq"])){echo $_POST["searchq"];}elseif(isset($_POST["csearch"])){echo $_POST["csearch"];} ?>" </h2>
                 <p class = "ContainerParagraph">
                 <br>
                 <table class="bord">
@@ -172,6 +192,50 @@
 
                             }
 
+                        }
+
+                        if(isset($_POST["csearch"]))
+                        {
+                            $selected = $_POST["csearch"];
+
+                            $sql = ("SELECT books.ISBN, books.BookTitle, books.Author, books.Edition, books.Year, categories.CategoryDesc, books.Reserved FROM books JOIN categories ON books.Category = categories.CategoryID WHERE categories.CategoryDesc = '$selected' ORDER BY Author DESC LIMIT 5;");
+
+                            $result = $conn->execute_query($sql); 
+                        
+                            if($result->num_rows > 0)
+                            {
+                                //output data of each row in the table
+
+                                while($row = $result->fetch_assoc())
+                                {
+                                    echo '<tr><td class="trasna">';
+                                    echo (htmlentities($row["ISBN"]));
+                                    echo '</td><td class="trasna">';
+                                    echo (htmlentities($row["BookTitle"]));
+                                    echo '</td><td class="trasna">';
+                                    echo (htmlentities($row["Author"]));
+                                    echo '</td><td class="trasna">';
+                                    echo (htmlentities($row["Edition"]));
+                                    echo '</td><td class="trasna">';
+                                    echo (htmlentities($row["Year"]));
+                                    echo '</td><td class="trasna">';
+                                    echo (htmlentities($row["CategoryDesc"]));
+                                    echo '</td><td class="trasna">';
+                                    if (htmlentities($row["Reserved"] == "N"))
+                                    {
+                                        echo '<form action="searchbooks.php" method="post"> <input type="hidden" name="ISBN" value="' . htmlentities($row["ISBN"]) . '"> <input id="submit" type="submit" name ="Reserve" value="Reserve"> </form>';
+                                    }
+                                    else
+                                    {
+                                        echo 'Already Reserved';
+                                    }
+                                    
+                                    echo "</td></tr>\n";
+
+                                }
+
+                            }
+                        
                         }
 
                     ?>
