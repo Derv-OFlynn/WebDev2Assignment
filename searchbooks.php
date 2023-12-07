@@ -144,10 +144,11 @@
                                     echo '</td><td class="trasna">';
                                     echo (htmlentities($row["CategoryDesc"]));
                                     echo '</td><td class="trasna">';
-                                    echo (htmlentities($row["Reserved"]));
+                                    echo '<form action="searchbooks.php" method="post"> <input id="submit" type="submit" value="Reserve"> </form>';
                                     echo "</td></tr>\n";
                                 }
 
+                    
                             }
                             else
                             {

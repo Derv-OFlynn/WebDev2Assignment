@@ -8,41 +8,35 @@
 
     require_once("database.php");
 
-    if (isset($_POST["account"]) && isset($_POST["pw"]))
+    if (isset($_POST["account"]) && isset($_POST["pw"]) && isset($_POST["phoneno"]) && isset($_POST["firstname"]) && isset($_POST["surname"]) && isset($_POST["address1"]) && isset($_POST["address2"]) && isset($_POST["city"]) && isset($_POST["mobileno"]))
     { 
 
         $uname = ($_POST["account"]);
         $pword = ($_POST["pw"]);
         $phnum = ($_POST["phoneno"]);
+        $fname = ($_POST["firstname"]);
+        $sname = ($_POST["surname"]);
+        $al1 = ($_POST["address1"]);
+        $al2= ($_POST["address2"]);
+        $ct = ($_POST["city"]);
+        $mnum = ($_POST["mobileno"]);
 
-        $sql = "INSERT INTO users FROM users WHERE username LIKE '$uname';";
+        $sql = "SELECT username FROM users WHERE username = '$uname';";
 
         $result = $conn->execute_query($sql);
 
         if ($result->num_rows > 0)
         {
-
-            while($row = $result->fetch_assoc())
-            {
-
-                if ($pword == htmlentities($row["password"]))
-                {
-                    setcookie("user", $uname, time()+3600); 
-                    $_SESSION["account"] = $_POST["account"];
-                    $_SESSION["success"] = "Logged In";
-                    header( 'Location: index.php' ) ;
-                    return;
-                } 
-        
-            }
-
-        }
-        else 
-        {
-            $_SESSION["error"] = "Incorrect password.";
-            header( 'Location: login.php' ) ;
+            $_SESSION["error"] = "Username is not unique!";
+            header( 'Location: register.php' ) ;
             return;
-        } 
+        }
+
+
+        $sql = ("INSERT INTO users (username, password, firstname, surname, addressline1, addressline2, city, phoneno, mobileno)  VALUES ('$uname', '$pword', '$fname', '$sname', '$al1', '$al2', '$ct', '$mnum', '$phnum');");
+
+        $result = $conn->execute_query($sql);
+
     } 
     
     else if (count($_POST) > 0)
@@ -98,7 +92,7 @@
 
                     if (isset($_SESSION["error"])) 
                     {
-                        echo('<p style="color:red">Error:'.$_SESSION["error"].'</p></br>');
+                        echo('<p class="ErrorMessage">Error:'.$_SESSION["error"].'</p></br>');
                         unset($_SESSION["error"]);
                     }
 
@@ -121,7 +115,7 @@
 
                     <p class = "ContainerParagraph">Password:
                         <br>
-                        <input type="text" name="pw" value="">
+                        <input type="text" name="pw" value="" maxlength="6">
                     </p>
 
                     <p class = "ContainerParagraph">First name: 
@@ -151,7 +145,7 @@
 
                     <p class = "ContainerParagraph">Phone Number:
                         <br>
-                        <input type="text" name="phoneno" value="">
+                        <input type="text" name="phoneno" value="" maxlength="10">
                     </p>
 
                     <p class = "ContainerParagraph">Mobile Number: 

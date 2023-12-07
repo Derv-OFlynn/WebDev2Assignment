@@ -113,38 +113,38 @@
                         <th> Your username </th>
                         <th> Date Reserved </th>
                     <?php
-                        
-                        $uname = $_COOKIE["user"];
 
-                        $sql = "SELECT reserved.username, reserved.ReservedDate, books.ISBN, books.BookTitle, books.Author FROM reserved JOIN books USING (ISBN) WHERE reserved.username LIKE '$uname' ORDER BY ReservedDate DESC";
-
-                        $result = $conn->execute_query($sql);
-
-                        if($result->num_rows > 0)
+                        if(isset($_COOKIE["user"]))
                         {
-                            //output data of each row in the table
+                            $uname = $_COOKIE["user"];
 
-                            while($row = $result->fetch_assoc())
+                            $sql = "SELECT reserved.username, reserved.ReservedDate, books.ISBN, books.BookTitle, books.Author FROM reserved JOIN books USING (ISBN) WHERE reserved.username LIKE '$uname' ORDER BY ReservedDate DESC";
+
+                            $result = $conn->execute_query($sql);
+
+                            if($result->num_rows > 0)
                             {
-                                echo '<tr><td class="trasna">';
-                                echo (htmlentities($row["ISBN"]));
-                                echo '</td><td class="trasna">';
-                                echo (htmlentities($row["BookTitle"]));
-                                echo '</td><td class="trasna">';
-                                echo (htmlentities($row["Author"]));
-                                echo '</td><td class="trasna">';
-                                echo (htmlentities($row["username"]));
-                                echo '</td><td class="trasna">';
-                                echo (htmlentities($row["ReservedDate"]));
-                                echo "</td></tr>\n";
+                                //output data of each row in the table
+
+                                while($row = $result->fetch_assoc())
+                                {
+                                    echo '<tr><td class="trasna">';
+                                    echo (htmlentities($row["ISBN"]));
+                                    echo '</td><td class="trasna">';
+                                    echo (htmlentities($row["BookTitle"]));
+                                    echo '</td><td class="trasna">';
+                                    echo (htmlentities($row["Author"]));
+                                    echo '</td><td class="trasna">';
+                                    echo (htmlentities($row["username"]));
+                                    echo '</td><td class="trasna">';
+                                    echo (htmlentities($row["ReservedDate"]));
+                                    echo '</td></tr">';
+
+                                }
+
                             }
 
                         }
-                        else
-                        {
-                            echo "0 results";
-                        }
-
                     ?>
 
                 </table>
