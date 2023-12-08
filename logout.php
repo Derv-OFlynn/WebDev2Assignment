@@ -2,8 +2,9 @@
 	session_start();
 
     setcookie("cookiename", "cookievalue");
-    
+
     unset($_SESSION["account"]);
+    unset($_SESSION["success"]);
 
     if ( isset($_SESSION["error"]) ) 
     {

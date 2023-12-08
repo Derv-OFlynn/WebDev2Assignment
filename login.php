@@ -5,6 +5,7 @@
     setcookie("cookiename", "cookievalue");
     
     unset($_SESSION["account"]);
+    unset($_SESSION["success"]);
 
     require_once("database.php");
 
@@ -18,14 +19,17 @@
 
         $result = $conn->execute_query($sql);
 
-        if ($result->num_rows > 0)
+        if($result->num_rows > 0)
         {
+
+            $loginsuccuess = false;
 
             while($row = $result->fetch_assoc())
             {
 
                 if ($pword == htmlentities($row["password"]))
                 {
+                    $loginsuccuess = true;
                     setcookie("user", $uname, time()+3600); 
                     $_SESSION["account"] = $_POST["account"];
                     $_SESSION["success"] = "Logged In";
@@ -35,16 +39,16 @@
         
             }
 
+            if(!$loginsuccuess)
+            {
+                $_SESSION["error"] = "Incorrect username or password.";
+                header( 'Location: login.php' ) ;
+                return;
+            } 
+
         }
-        else 
-        {
-            $_SESSION["error"] = "Incorrect password.";
-            header( 'Location: login.php' ) ;
-            return;
-        } 
-        
+
     } 
-    
     else if (count($_POST) > 0)
     { 
         $_SESSION["error"] = "Missing Required Information";
@@ -63,6 +67,7 @@
     Title: Login
     Description: This is the homepage for my Library website
 -->
+
 <html lang="en">
 
     <head>
@@ -174,10 +179,7 @@
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-        <!--Local Script-->
-        <script src="Scripts\coillteachlib.js"></script>
-        <!--End of scripts-->
-    
+
     </body>
 
 </html>
